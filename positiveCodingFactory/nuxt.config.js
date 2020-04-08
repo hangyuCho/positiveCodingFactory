@@ -15,6 +15,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
     ]
   },
   /*
@@ -30,6 +32,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~plugins/common'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -51,6 +54,10 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    //baseURL: 'https://onestarweblog.com',
+    baseURL: 'http://localhost:8081',
+    proxyHeaders: false,
+    credentials: false
   },
   /*
   ** vuetify module configuration
