@@ -83,7 +83,8 @@ export default {
     }
   },
   markdownit: {
-    injected: true
+    injected: true,
+    use: ['markdown-it-plantuml']
   },
   /*
   ** Build configuration
