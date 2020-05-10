@@ -4,7 +4,7 @@
         v-for="item in items"
         :key="item.text"
         link
-         :href="item.path"
+         :href="'/'+item.path"
     >
         <v-list-item-action>
           <v-icon color="blue darken-2">{{ item.icon }}</v-icon>
@@ -100,10 +100,10 @@ export default {
     }),
     created () {
       var self = this
-      this.$vuetify.theme.dark = true
+      this.$vuetify.theme.dark = false
       var arr = [];
       //this.execAxios("get","/osb/board", {}, function(res){
-      this.$execAxios(this, "get","/osb/board", {}, function(res){
+      this.$execAxios(this, "get","board", {}, function(res){
         self.items = self.getBoardList(res.data.boardList);
       })
     },
@@ -114,7 +114,7 @@ export default {
         var arr = []
         list    = list || []
         list.forEach(function(obj){
-          arr.push({"icon": "mdi-domain", "text": obj.boardName, "path": "/board/"+obj.boardId});
+          arr.push({"icon": "mdi-domain", "text": obj.boardName, "path": "posts/"+obj.boardName});
         })
         return arr
       },
@@ -122,7 +122,7 @@ export default {
         var self = this
         var form = new FormData();
         form.set("boardName", this.boardName)
-        this.$execAxios(this, "post","/osb/board", form, function(res){
+        this.$execAxios(this, "post","board", form, function(res){
           self.items = self.getBoardList(res.data.boardList);
         })
       },

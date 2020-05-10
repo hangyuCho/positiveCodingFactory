@@ -54,7 +54,30 @@
      </div>
     </v-content>
     <v-footer>
-      
+      <v-container>
+        <v-row justify="center">
+          <v-col
+            cols="12"
+            md="12">
+            <v-btn fab="true" color="light-blue lighten-5" href="#">
+              <v-icon large color="light-blue accent-3">mdi-twitter</v-icon>
+            </v-btn>
+            <v-btn fab="true" color="light-blue lighten-5" href="#">
+              <v-icon large color="light-blue accent-3">mdi-instagram</v-icon>
+            </v-btn>
+            <v-btn fab="true" color="light-blue lighten-5" href="https://www.facebook.com/hangyu.cho.1">
+              <v-icon large color="light-blue accent-3">mdi-facebook</v-icon>
+            </v-btn>
+            <v-btn fab="true" color="light-blue lighten-5" href="#">
+              <v-icon large color="light-blue accent-3">mdi-git</v-icon>
+            </v-btn>
+
+            <v-btn fab="true" color="light-blue lighten-5" href="mailto:chg3376@gmail.com">
+              <v-icon large color="light-blue accent-3">mdi-email-edit-outline</v-icon>
+            </v-btn>
+            </v-col>
+        </v-row>
+      </v-container>
     </v-footer>
   </v-app>
 </template>
@@ -80,3 +103,6 @@
     
   }
 </script>
+<style>
+
+</style>

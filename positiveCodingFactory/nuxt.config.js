@@ -14,9 +14,14 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css' }
     ],
     script: [
+      {
+        src: "https://code.jquery.com/jquery-3.3.1.slim.min.js",
+        type: "text/javascript"
+      }
     ]
   },
   /*
@@ -27,12 +32,17 @@ export default {
   ** Global CSS
   */
   css: [
+    'tui-editor/dist/tui-editor.css',
+    'tui-editor/dist/tui-editor-contents.css',
+    'codemirror/lib/codemirror.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~plugins/common'
+    '~plugins/common',
+    '~plugins/tui-editor.client.js',
+    '~plugins/disqus',
   ],
   /*
   ** Nuxt.js dev-modules
@@ -48,16 +58,15 @@ export default {
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
-    // Doc: https://github.com/nuxt-community/modules/tree/master/packages/markdownit
-    '@nuxtjs/markdownit',
+    //'@nuxt-tui/editor',
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    //baseURL: 'https://onestarweblog.com',
-    baseURL: 'http://localhost:8081',
+    baseURL: 'http://localhost:8081/osb',
+    //baseURL: 'https://onestarweblog.com/osb',
     proxyHeaders: false,
     credentials: false
   },
@@ -67,7 +76,7 @@ export default {
   */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
-    theme: {
+    /*theme: {
       dark: true,
       themes: {
         dark: {
@@ -80,11 +89,17 @@ export default {
           success: colors.green.accent3
         }
       }
+    },*/
+    defaultAssets: {
+      font: true,
+      icons: 'md'
+    },
+    icons: {
+      iconfont: 'md',
     }
   },
-  markdownit: {
-    injected: true,
-    use: ['markdown-it-plantuml']
+  tui: {
+    editor: true // or options
   },
   /*
   ** Build configuration
