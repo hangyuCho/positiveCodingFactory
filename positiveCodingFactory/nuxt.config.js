@@ -65,8 +65,8 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: 'http://localhost:8081/osb',
-    //baseURL: 'https://onestarweblog.com/osb',
+    //baseURL: 'http://localhost:8081/osb',
+    baseURL: 'https://onestarweblog.com/osb',
     proxyHeaders: false,
     credentials: false
   },
