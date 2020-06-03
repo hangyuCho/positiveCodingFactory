@@ -11,7 +11,7 @@
     <v-app-bar
       app
       clipped-left
-      color="blue"
+      color="light-blue lighten-5"
       dense
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
@@ -44,7 +44,7 @@
      <div>
       <v-card>
         <v-responsive :aspect-ratio="16/9">
-          <v-container fluid>
+          <v-container fluid >
             <v-row justify="center">
               <nuxt />
             </v-row>
@@ -104,5 +104,20 @@
   }
 </script>
 <style>
-
+body{
+      margin:0;
+    }
+.v-responsive {
+  background-color : rgba(255, 255, 0, 0.8);
+  /*background-image: url('https://source.unsplash.com/category/food/1600x900');*/
+  background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixlib=rb-1.2.1&q=80&w=1600');
+  background-size: cover;
+  min-height:100vh;
+}
+.v-responsive__content {
+  background-color : rgba(255,255,255,0.6);
+}
+.v-navigation-drawer__content{
+  background-color : rgb(255, 250, 251);
+}
 </style>

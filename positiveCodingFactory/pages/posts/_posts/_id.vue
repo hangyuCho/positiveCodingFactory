@@ -183,6 +183,7 @@ export default {
       items: ['자바', '파이썬'],
       editorOptions : {
         minHeight: '200px',
+        minWidth: '30em',
         useCommandShortcut: true,
         useDefaultHTMLSanitizer: true,
         usageStatistics: true,
@@ -252,6 +253,11 @@ export default {
 </script>
 <style>
 .top-width {
-  width: calc(100% - 100px);
+  width: calc(100% - 50px);
+}
+.container.container--fluid > div > div{
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 0.4em;
+  padding: 1em;
 }
 </style>

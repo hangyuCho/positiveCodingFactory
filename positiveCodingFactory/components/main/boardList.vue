@@ -1,5 +1,5 @@
 <template>
-  <v-list dense>
+  <v-list dense >
     <v-list-item
         v-for="item in items"
         :key="item.text"
