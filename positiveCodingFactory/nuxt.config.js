@@ -65,7 +65,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: 'https://onestarweblog.com/osb',
+    baseURL: process.env.API_URL,
     proxyHeaders: false,
     credentials: false
   },
